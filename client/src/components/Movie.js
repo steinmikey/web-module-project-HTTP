@@ -4,7 +4,7 @@ import { Link, useParams, useHistory } from "react-router-dom";
 import axios from "axios";
 
 const Movie = (props) => {
-  const { addToFavorites } = props;
+  //   const { addToFavorites } = props;
 
   const [movie, setMovie] = useState("");
 
@@ -28,8 +28,9 @@ const Movie = (props) => {
       .then((res) => {
         // console.log(res);
         props.deleteMovie(res.data);
+        push("/movies");
       })
-      .then(push("/movies"))
+      //   .then(push("/movies"))
       .catch((err) => {
         console.error(err);
       });
